@@ -121,9 +121,9 @@
         
         取得解析结果directive，做指令绑定bindDirective:
         
-        * 异常节点上的指令属性
+        * 移除节点上的指令属性
         * 保存需要监听的属性,记录属性值和属性关联的指令：`bindings[directive.key] = binding = {value: undefined, directives: [] }`
-        * 在directive上缓存关联的dom节点`directive.el = el`, 和属性关联`binding.directives.push(directive)`
+        * 在directive上缓存关联的dom节点`directive.el = el`, 把指令和属性关联`binding.directives.push(directive)`
         * 执行`directive.bind`钩子做初始化
         * 在`seed.scope`定义属性,监听属性变化同步更新`bindings[directive.key]`并执行指令
             
